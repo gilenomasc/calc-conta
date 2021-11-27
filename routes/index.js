@@ -112,18 +112,14 @@ router.post('/luzsave', (req, res) => {
 router.post('/ac', (req, res) => {
   let precos = [];
   let consumo = +req.body.atual - +req.body.anterior
-  db.connect(function (err) {
-    if (err) throw err;
     db.query("SELECT preco FROM agua", (err, result, fields) => {
       if (err) throw err;
       Object.keys(result).forEach((key) => {
         var row = result[key];
         precos.push(+row.preco);
       });
-      // res.send('<p>' + calculo(req.body.consumo, precos) + '</p>')
       return res.render('agua_res', { str: calcAgua(consumo, precos), pag: '/agua' });
     });
-  });
 });
 
 router.post('/lc', (req, res) => {
@@ -139,8 +135,6 @@ router.post('/lc', (req, res) => {
     mora: req.body.mora,
     outros: req.body.outros
   }
-  db.connect(function (err) {
-    if (err) throw err;
     db.query("SELECT tarifa FROM luz", (err, result, fields) => {
       if (err) throw err;
       Object.keys(result).forEach((key) => {
@@ -149,10 +143,6 @@ router.post('/lc', (req, res) => {
       });
       return res.render('agua_res', { str: calcLuz(arrForm, precos), pag: '/luz' })
     });
-  });
-
-  // res.send('<p>' + calcLuz(precos, arrForm) + '</p>')
-
 });
 
 module.exports = router;

@@ -23,7 +23,7 @@ function calc_Agua(consumo, precos) {
             break;
 
     }
-    return 'O valor a ser pago pelo consumo de <font color="#B5CEA8"> ' + consumo + 'm³</font> de água, é de <font color="#50C7FA"> ' + resultado.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+    return 'O valor aproximado a ser pago pelo consumo de <font color="#B5CEA8"> ' + consumo + 'm³</font> de água, é de <font color="#50C7FA"> ' + resultado.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 }
 
 function calc_Luz(arrForm, precos) {

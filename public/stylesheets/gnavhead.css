@@ -1,0 +1,9 @@
+.esq {
+    background-image: url("../images/agua.jpg");
+    width: 50%;
+  }
+  
+  .dir{
+    background-image: url("../images/luz.jpg");
+    width: 50%;
+  }

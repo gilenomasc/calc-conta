@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+  background: rgb(51, 49, 49);
+  border: 0;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+  color: aliceblue;
+}
+
+nav{
+  display: flex;
+  background: rgb(31, 30, 32);
+  height: 80px;
+}
+.esq {
+    display:flex;
+    background-size:cover ;
+    height:80px;
+  }
+.dir {
+    background-size:cover ;
+    display:flex;
+    
+    height:80px;
+  }
+.elesq{
+  width: 100%;
+  height:80px;
+}
+
+.btesq{
+  width: 50%;
+  text-align: left;
+  margin: auto 15px;
+}
+.btdir{
+  width: 50%;
+  text-align: right;
+  margin: auto 5px;
+}
+.eldir{
+  width: 50%;
+  text-align: left;
+  margin: auto 5px;
+}
+nav a{
+  text-decoration: none;
+  color:#EDF0F1;;
+}
+
+a, button{
+  font-weight: 500;
+  font-size: 20px;
+  color: #EDF0F1;
+  text-decoration: none;
+
+}
+
+.btdir button {
+  background-image: linear-gradient(to right, rgba(5, 40, 51, 0.9) , rgba(100, 170, 212, 0.9));
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  width: 90px;
+}
+.btdir button:hover {
+  background-image: linear-gradient(to right, rgba(5, 40, 51) , rgba(100, 170, 212));
+} 
+
+.eldir button {
+  background-image: linear-gradient(to right, rgb(0, 10, 23, 0.9) , rgb(0, 75, 123, 0.9));
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  width: 90px;
+}
+.eldir button:hover {
+  background-image: linear-gradient(to right, rgba(0, 10, 23) , rgba(0, 75, 123));
+}

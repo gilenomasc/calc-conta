@@ -1,0 +1,89 @@
+.container {
+  max-width: 460px;
+  margin: 10vh auto 0 auto;
+  -webkit-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+-moz-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+  text-align: center;
+  padding: 15px 15px 10px 15px;
+  background-color: #1e1e1e;
+}
+
+label input{
+  margin: 0.1rem 0.8rem 0.2rem 0.2rem;
+  vertical-align: middle !important;
+  color: rgb(193, 239, 240);
+  background: rgb(50, 50, 50);
+  text-align: center;
+}
+form button{
+  height: 50% !important;
+  vertical-align: middle !important;
+  margin: auto;
+}
+.tabtop {
+  padding: 8px;
+  margin:0px;
+}
+.tabtop h5{
+  margin-top: 1.2rem;
+  margin-bottom: 0rem;
+}
+.esq {
+  background-image: url("../images/agua.jpg");
+  width: 100%;
+}
+
+input{
+  max-width: 100px;
+  font-size:large;
+  margin-right: 10px;
+}
+
+table input {
+  white-space: nowrap;
+  width: 60%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.topo h4{
+  margin: 1.5rem;
+}
+input{
+  vertical-align: middle !important;
+  color: rgb(193, 239, 240);
+  background: rgb(50, 50, 50);
+  text-align: center;
+}
+td{
+  vertical-align: middle !important;
+  text-align: center !important;
+  /* margin: 0rem !important; */
+  padding: 5px 5px !important;
+}
+
+.calc form{
+  display:inline-flex;
+  margin: 0.8rem 3.2rem 0.2rem 0rem;
+}
+
+.labels{
+  text-align: right;
+}
+
+.tab {
+  text-align: center;
+  margin: auto;
+}
+
+.tab input{
+  color: rgb(193, 239, 240);
+  background: rgb(50, 50, 50);
+}

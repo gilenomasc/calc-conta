@@ -1,0 +1,66 @@
+
+body {
+    display: grid;
+  }
+  .container {
+      margin: 10vh auto 0 auto;
+      display: inline-flex;
+      max-width: 50%;
+      -webkit-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+      -moz-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+      box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+      text-align: center;
+      padding:15px;
+      background-color: #1e1e1e;
+  }
+  
+  .calc {
+      width: 25%;
+  }
+  .tabtarifa{
+      width: 70%;
+      margin-left:auto;
+      margin-right: auto
+  }
+  .labels div{
+      text-align: left;
+  }
+ 
+  .labels label{
+      font-size: 12px
+  }
+  .labels input, .tab input{
+      color: rgb(193, 239, 240);
+      background: rgb(50, 50, 50);
+  }
+  select {
+      color: rgb(193, 239, 240);
+      background: rgb(50, 50, 50);
+  }
+  form button{
+      margin: 10px auto 0px auto;
+  }
+  .tabtop {
+      padding: 8px;
+      margin:0px;
+  }
+  .tabtop h5{
+      margin-top: 1.2rem;
+      margin-bottom: 0rem;
+  }
+  .esq {
+      background-image: url("../images/luz.jpg");
+      width: 100%;
+  }
+  
+ select {
+    background-color: rgb(51, 49, 49) !important;
+    color: rgb(193, 239, 240)!important;
+  }
+
+  .tab{
+      margin: auto;
+  }
+  .tab input{
+      max-width: 100px;
+  }

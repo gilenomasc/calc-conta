@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/gnav.css">
+    <link rel="stylesheet" href="stylesheets/luz.css">
+    <title>Agua</title>
+</head>
+
+<body>
+    <nav class="wrapper">
+        <div class="esq">
+            <div class="btesq">
+                <a href="/">Home</a>
+            </div>
+        </div>
+        <div class="dir">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="tab">
+            <h4>Tabela de preços - luz</h4>
+            <form method="post" action="/luzsave">
+                <table class="table table-dark table-hover table-fit">
+                    <tr>
+                        <th style="background-color: rgb(18, 18, 18)">Item</th>
+                        <th style="background-color: rgb(18, 18, 18)">Tarifa</th>
+                    </tr>
+                    <% for(result of tabluz) {%>
+                        <tr>
+                            <td style="text-align:left">
+                                <%= result.item %>
+                            </td>
+                            <td>
+                                <input class="form-control form-control-sm mx-sm-1" type="number"
+                                    name="n<%=result.id %>" value="<%=result.tarifa %>" pattern="[0-9]+([\.,][0-9]+)?"
+                                    step="0.00001">
+                            </td>
+                            <% } %>
+                        </tr>
+                        <tr>
+                            <td class="salvar" colspan="2">
+                                <button type="submit" class="btn btn-success">Salvar mudanças</button>
+                            </td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

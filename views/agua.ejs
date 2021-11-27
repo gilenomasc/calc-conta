@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/gnav.css">
+    <!-- <link rel="stylesheet" href="stylesheets/gnavhead.css"> -->
+    <link rel="stylesheet" href="stylesheets/agua.css">
+    <title>Calculadora de consumo</title>
+</head>
+
+<body>
+    <nav class="wrapper">
+        <div class="esq">
+            <div class="btesq">
+                <a href="/">Home</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="calc">
+            <form method="post" action="/ac">
+                <div class="labels">
+                    <label for="anterior">Leitura anterior:
+                        <input type="number" name="anterior" pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </label>
+                    <label for="atual">Leitura atual:
+                        <input type="number" name="atual" pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="calcular">Calcular</button>
+            </form>
+        </div>
+        <div class="tabtop">
+            <h5>Tarifas</h5>
+        </div>
+        <table class="table table-dark table-hover">
+            <tr>
+                <th>Faixa de consumo</th>
+                <th>Tarifa</th>
+            </tr>
+            <% for(result of tabagua) {%>
+                <tr>
+                    <td>
+                        <%= result.faixa %>
+                    </td>
+                    <td>
+                        <%= result.preco %>
+                    </td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="/aguaedit" type="button" class="btn btn-primary">Editar</a>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <script src="javascripts/calculo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/gnav.css">
+    <link rel="stylesheet" href="stylesheets/agua.css">
+    <title>Agua</title>
+</head>
+
+<body>
+    <nav class="wrapper">
+        <div class="esq">
+            <div class="btesq">
+                <a href="/">Home</a>
+            </div>
+        </div>
+        <div class="dir">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="topo">
+            <h4>Tabela de preços - água</h4>
+        </div>
+        <div class="tab">
+            <form method="post" action="/aguasave">
+                <table class="table table-dark table-hover table-fit">
+                    <tr>
+                        <th style="background-color: rgb(18, 18, 18)">Faixa de consumo (m³)</th>
+                        <th style="background-color: rgb(18, 18, 18)">Tarifa</th>
+                    </tr>
+                    <% for(result of tabagua) {%>
+                        <tr>
+                            <td>
+                                <%= result.faixa %>
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" name="n<%=result.id %>"
+                                    value="<%=result.preco %>" pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                            </td>
+                            <% } %>
+                        </tr>
+                        <tr>
+                            <td class="salvar" colspan="2">
+                                <button type="submit" class="btn btn-success">Salvar mudanças</button>
+                            </td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

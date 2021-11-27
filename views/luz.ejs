@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/gnav.css">
+    <link rel="stylesheet" href="stylesheets/luz.css">
+    <title>Calculadora de consumo</title>
+</head>
+
+<body>
+    <nav class="wrapper">
+        <div class="esq">
+            <div class="btesq">
+                <a href="/">Home</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="calc">
+            <form method="post" action="/lc">
+                <div class="labels">
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="bandeira">Bandeira</label>
+                        <select class="form-control form-control-sm" name="bandeira">
+                            <option value="0" selected>...</option>
+                            <option value="1">Amarela</option>
+                            <option value="2">Vermelha 1</option>
+                            <option value="3">Vermelha 2</option>
+                            <option value="4">Escassez hídrica</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="anterior">Leitura anterior</label>
+                        <input type="number" class="form-control form-control-sm" name="anterior"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="atual">Leitura atual</label>
+                        <input type="number" class="form-control form-control-sm" name="atual"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="cofins">COFINS</label>
+                        <input type="number" class="form-control form-control-sm" name="cofins"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="pispasep">PIS/PASEP</label>
+                        <input type="number" class="form-control form-control-sm" name="pispasep"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="txmunicip">Taxas municipais</label>
+                        <input type="number" class="form-control form-control-sm" name="txmunicip"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="multa">Multa por atraso</label>
+                        <input type="number" class="form-control form-control-sm" name="multa"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="mora">Juros mora</label>
+                        <input type="number" class="form-control form-control-sm" name="mora"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <div class="form-group mx-sm-4 mb-1">
+                        <label for="atual">Outros</label>
+                        <input type="number" class="form-control form-control-sm" name="outros"
+                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="calcular">Calcular</button>
+                </div>
+            </form>
+        </div>
+        <div class="tabtarifa">
+            <div class="tabtop">
+                <h5>Tarifas</h5>
+            </div>
+            <table class="table table-dark table-hover">
+                <tr>
+                    <th style="background-color: rgb(15, 15, 15)">Item</th>
+                    <th style="background-color: rgb(18, 18, 18)">Tarifa</th>
+                </tr>
+                <% for(result of tabluz) {%>
+                    <tr>
+                        <td style="text-align:left;">
+                            <%= result.item %>
+                        </td>
+                        <td>
+                            <%= result.tarifa %>
+                        </td>
+                        <% } %>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href="/luzedit" type="button" class="btn btn-primary">Editar</a>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    <script src="javascripts/calculo.js"></script>
+</body>
+
+</html>

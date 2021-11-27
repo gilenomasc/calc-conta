@@ -5,33 +5,33 @@ const db = require('../util/db');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index');
+  return res.render('index');
 });
 
 router.get('/agua', (req, res) => {
   db.query('SELECT * FROM agua', [], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
-    res.render('agua', { tabagua: result })
+    return res.render('agua', { tabagua: result })
   });
 
 });
 router.get('/luz', (req, res) => {
   db.query('SELECT * FROM luz', [], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
-    res.render('luz', { tabluz: result })
+    return res.render('luz', { tabluz: result })
   });
 
 });
 router.get('/aguaedit', (req, res) => {
   db.query('SELECT * FROM agua', [], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
-    res.render('agua_edit', { tabagua: result })
+    return res.render('agua_edit', { tabagua: result })
   });
 
 });
@@ -39,9 +39,9 @@ router.get('/aguaedit', (req, res) => {
 router.get('/luzedit', (req, res) => {
   db.query('SELECT * FROM luz', [], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
-    res.render('luz_edit', { tabluz: result })
+    return res.render('luz_edit', { tabluz: result })
   });
 
 });
@@ -49,27 +49,27 @@ router.get('/luzedit', (req, res) => {
 router.post('/aguasave', (req, res) => {
   db.query('UPDATE agua SET preco = ? WHERE id = ?;', [req.body.n1, 1], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE agua SET preco = ? WHERE id = ?;', [req.body.n2, 2], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE agua SET preco = ? WHERE id = ?;', [req.body.n3, 3], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE agua SET preco = ? WHERE id = ?;', [req.body.n4, 4], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE agua SET preco = ? WHERE id = ?;', [req.body.n5, 5], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   res.redirect('/agua')
@@ -78,32 +78,32 @@ router.post('/aguasave', (req, res) => {
 router.post('/luzsave', (req, res) => {
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n1, 1], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n2, 2], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n3, 3], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n4, 4], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n5, 5], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   db.query('UPDATE luz SET tarifa = ? WHERE id = ?;', [req.body.n6, 6], (err, result) => {
     if (err) {
-      res.status(200).send(erro);
+      return res.status(200).send(err);
     }
   });
   res.redirect('/luz')
@@ -121,7 +121,7 @@ router.post('/ac', (req, res) => {
         precos.push(+row.preco);
       });
       // res.send('<p>' + calculo(req.body.consumo, precos) + '</p>')
-      res.render('agua_res', { str: calcAgua(consumo, precos), pag: '/agua' });
+      return res.render('agua_res', { str: calcAgua(consumo, precos), pag: '/agua' });
     });
   });
 });
@@ -147,7 +147,7 @@ router.post('/lc', (req, res) => {
         var row = result[key];
         precos.push(+row.tarifa);
       });
-      res.render('agua_res', { str: calcLuz(arrForm, precos), pag: '/luz' })
+      return res.render('agua_res', { str: calcLuz(arrForm, precos), pag: '/luz' })
     });
   });
 

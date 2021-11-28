@@ -7,3 +7,25 @@
     background-image: url("../images/luz.jpg");
     width: 50%;
   }
+
+  .esq {
+    background-image: url("agua.jpg");
+    width: 50%;
+  }
+  
+  .dir{
+    background-image: url("luz.jpg");
+    width: 50%;
+  }
+
+  .welcome {
+    -webkit-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+  -moz-box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+  box-shadow: 6px 8px 34px 3px rgba(0,66,102,0.79);
+    padding: 35px 35px 25px 25px;
+    background-color: #1e1e1e;
+  }
+  
+  h1 {
+    text-align: center; 
+  }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 body{
-  background: rgb(51, 49, 49);
+  background: rgb(170, 167, 167);
   border: 0;
   margin: 0px;
   padding: 0px;
@@ -10,7 +10,7 @@ body{
 
 nav{
   display: flex;
-  background: rgb(31, 30, 32);
+  background: rgb(172, 172, 172);
   height: 80px;
 }
 .esq {
@@ -58,7 +58,7 @@ a, button{
 }
 
 .btdir button {
-  background-image: linear-gradient(to right, rgba(5, 40, 51, 0.9) , rgba(100, 170, 212, 0.9));
+  background-image: linear-gradient(to right, rgba(5, 40, 51, 0.9) , rgb(7, 17, 22));
   padding: 5px;
   border: none;
   border-radius: 10px;
@@ -67,11 +67,11 @@ a, button{
   width: 90px;
 }
 .btdir button:hover {
-  background-image: linear-gradient(to right, rgba(5, 40, 51) , rgba(100, 170, 212));
+  background-image: linear-gradient(to right, rgb(23, 14, 150) , rgb(20, 15, 145));
 } 
 
 .eldir button {
-  background-image: linear-gradient(to right, rgb(0, 10, 23, 0.9) , rgb(0, 75, 123, 0.9));
+  background-image: linear-gradient(to right, rgb(231, 23, 8) , rgb(233, 13, 5));
   padding: 5px;
   border: none;
   border-radius: 10px;
@@ -80,5 +80,5 @@ a, button{
   width: 90px;
 }
 .eldir button:hover {
-  background-image: linear-gradient(to right, rgba(0, 10, 23) , rgba(0, 75, 123));
+  background-image: linear-gradient(to right, rgb(218, 191, 38) , rgb(218, 176, 40));
 }
